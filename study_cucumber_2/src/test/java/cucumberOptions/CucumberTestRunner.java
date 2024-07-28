@@ -9,10 +9,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/java/features",
         glue = "stepDefinitions",
-        monochrome = true,
         plugin = {"pretty","html:target/site/cucuber-report-default","json:target/site/cucumber.json"},
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@displayed"
+        tags = "@fb"
 )
 public class CucumberTestRunner {
 }
