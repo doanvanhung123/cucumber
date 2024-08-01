@@ -1,0 +1,14 @@
+testdata\People.class
+commons\utilities\JsonHelper.class
+commons\GlobalConstants.class
+PageUI\ProductPageUI.class
+commons\utilities\Environment.class
+testdata\UserDataMapper.class
+commons\utilities\ExcelHelper.class
+commons\BasePage.class
+PageUI\LoginPageUI.class
+PageObject\CommonPageObject.class
+PageObject\LoginPageObject.class
+PageObject\PageGeneratorManager.class
+PageObject\ProductPageObject.class
+PageUI\CommonPageUI.class

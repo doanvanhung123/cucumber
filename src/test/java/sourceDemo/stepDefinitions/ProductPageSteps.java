@@ -19,6 +19,6 @@ public class ProductPageSteps {
 
     @Then("Login successfully")
     public void login_successfully() {
-        Assert.assertTrue(productPage.isProductPageDisplayed());
+        Assert.assertTrue("Home page is not displayed",productPage.isProductPageDisplayed());
     }
 }

@@ -4,7 +4,7 @@ import java.io.File;
 
 public class GlobalConstants {
 
-    public static final String SOURCE_DEMO_URL = "https://www.saucedemo.com/";
+    public static final String SOURCE_DEMO_URL = "https://demo.guru99.com/v4/manager/addcustomerpage.php";
     public static final String ADMIN_PAGE_URL = "https://admin-demo.nopcommerce.com";
     public static final String PROJECT_PATH = System.getProperty("user.dir");
 

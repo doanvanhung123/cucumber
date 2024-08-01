@@ -25,7 +25,6 @@ public class Hooks {
     public synchronized static WebDriver openAndQuitBrowser() {
         // Run by Maven command line
         String browser = System.getProperty("BROWSER");
-        System.out.println("Browser name run by command line = " + browser);
 
         // Check driver đã được khởi tạo hay chưa?
         if (driver == null) {

@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/java/facebook/features",
         glue = "facebook/Definitions",
-        plugin = {"pretty","html:target/site/cucuber-report-default","json:target/site/cucumber.json"},
+        plugin = {"pretty","html:target/site/cucuber-report-default","json:target/site/cucumberFB.json"},
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         tags = "@fb"
 )

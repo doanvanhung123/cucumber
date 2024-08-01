@@ -15,6 +15,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.source>17</maven.compiler.source>
+        <cucumber.report>3.20.0</cucumber.report>
     </properties>
 
     <dependencies>
@@ -67,7 +68,7 @@
         <dependency>
             <groupId>net.masterthought</groupId>
             <artifactId>cucumber-reporting</artifactId>
-            <version>5.7.5</version>
+            <version>${cucumber.report}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-html -->
@@ -96,18 +97,28 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.18.1</version>
+<!--                <configuration>-->
+<!--                    <testFailureIgnore>true</testFailureIgnore>-->
+<!--                    <includes>-->
+<!--                        <include>**/*/SouceDemoTestRunner.java</include>-->
+<!--                    </includes>-->
+<!--                </configuration>-->
                 <configuration>
+                    <parallel>classes</parallel>
+<!--                    <forkMode>perthread</forkMode>-->
+                    <threadCount>3</threadCount>
+<!--                    <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>-->
                     <includes>
-                        <include>**/*/CucumberTestRunner.java</include>
+                        <include>**/*TestRunner.java</include>-->
                     </includes>
                 </configuration>
             </plugin>
 
-            <!-- Generate report -->
+<!--             Generate report -->
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
-                <version>3.10.0</version>
+                <version>${cucumber.report}</version>
                 <executions>
                     <execution>
                         <id>execution</id>
@@ -116,11 +127,16 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>SELENIUM ONLINE - BANK GURU</projectName>
+                            <projectName>SOURCE LAB DEMO HTML</projectName>
+<!--                            <skip>false</skip>-->
                             <outputDirectory>${project.build.directory}/site/cucumber-reporting</outputDirectory>
-                            <cucumberOutput>target/site/cucumber.json</cucumberOutput>
-<!--                            <enableFlashCharts>true</enableFlashCharts>-->
-<!--                            <skippedFails>true</skippedFails>-->
+                            <inputDirectory>${project.build.directory}/site</inputDirectory>
+                            <jsonFiles>
+                                <param>**/*.json</param>
+                            </jsonFiles>
+                            <!--                            <enableFlashCharts>true</enableFlashCharts>-->
+                            <!--                            <skippedFails>true</skippedFails>-->
+                            <checkBuildResult>false</checkBuildResult>
                         </configuration>
                     </execution>
                 </executions>
